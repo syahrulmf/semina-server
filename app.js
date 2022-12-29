@@ -7,6 +7,7 @@ const app = express();
 
 // router
 const categoriesRouter = require("./app/api/v1/categories/router");
+const imagesRouter = require("./app/api/v1/images/router");
 const eventsRouter = require("./app/api/v1/events/router");
 const participantsRouter = require("./app/api/v1/participants/router");
 const talentsRouter = require("./app/api/v1/talents/router");
@@ -31,6 +32,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(v1, categoriesRouter);
+app.use(v1, imagesRouter);
 app.use(v1, eventsRouter);
 app.use(v1, participantsRouter);
 app.use(v1, talentsRouter);
