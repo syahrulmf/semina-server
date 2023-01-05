@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express();
+const { signinCms } = require("./controller");
 
-router.get("/auth", (req, res) => {
-  res.status(200).json({
-    message: "Halaman auth",
-  });
-});
+router.post("/auth/signin", signinCms);
 
 module.exports = router;
