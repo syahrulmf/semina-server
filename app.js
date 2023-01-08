@@ -9,12 +9,13 @@ const app = express();
 const categoriesRouter = require("./app/api/v1/categories/router");
 const imagesRouter = require("./app/api/v1/images/router");
 const eventsRouter = require("./app/api/v1/events/router");
-const participantsRouter = require("./app/api/v1/participants/router");
 const talentsRouter = require("./app/api/v1/talents/router");
 const organizersRouter = require("./app/api/v1/organizers/router");
 const ticketCategoriesRouter = require("./app/api/v1/ticket_categories/router");
 const authCMSRouter = require("./app/api/v1/auth/router");
 const ordersRouter = require("./app/api/v1/orders/router");
+const participantsRouter = require("./app/api/v1/participants/router");
+const paymentsRouter = require("./app/api/v1/payments/router");
 
 const v1 = "/api/v1";
 
@@ -42,6 +43,7 @@ app.use(`${v1}/cms`, organizersRouter);
 app.use(`${v1}/cms`, ticketCategoriesRouter);
 app.use(`${v1}/cms`, authCMSRouter);
 app.use(`${v1}/cms`, ordersRouter);
+app.use(`${v1}/cms`, paymentsRouter);
 app.use(v1, participantsRouter);
 
 // middlewares
